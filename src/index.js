@@ -21,3 +21,13 @@ function filter(items, predicate) {
 }
 var j = ["1", "2", "3"];
 console.log(filter(j, function (x) { return x !== "2"; }));
+function reduce(items, initValue, f) {
+    var acc = initValue;
+    for (var k_1 = 0; k_1 < items.length; k_1++) {
+        acc = f(acc, items[k_1]);
+    }
+    return acc;
+}
+var k = ["1", "2", "3"];
+var result = reduce(k, "", function (acc, x) { return acc + x; });
+console.log(result);
